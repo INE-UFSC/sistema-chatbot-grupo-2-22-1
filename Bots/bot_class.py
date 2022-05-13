@@ -11,6 +11,7 @@ class Bot(ABC):
     def nome(self, nome):
         self.__nome = nome
 
+    #Analisar se o ultimo metodo esta correto
     @abstractmethod
     def mostra_comandos(self):
         return str
