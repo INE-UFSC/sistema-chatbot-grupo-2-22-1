@@ -8,14 +8,20 @@ class SistemaChatBot:
         self.__bot = None
     
     def boas_vindas(self):
-        pass
+        print('Ola, esse é o sistema de chatbots do Grupo 2\n')
         ##mostra mensagem de boas vindas do sistema
 
     def mostra_menu(self):
+        print('temos 2 bots disponiveis: o brabo e o goodvibes')
+        aux = int(input('digite:\n 0 para o brabo \n1 para o goodvibes: ')
+        while aux not in :
+           aux = int(input('input fora do escopo, digite 0 para o brabo ou 1 para o goodvibes: ')
+        escolhe_bot(aux)
         pass
         ##mostra o menu de escolha de bots
     
     def escolhe_bot(self):
+
         pass
         ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot 
 
