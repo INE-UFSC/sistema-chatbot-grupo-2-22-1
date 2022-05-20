@@ -2,40 +2,26 @@ from Bots.Bot import Bot
 
 class SistemaChatBot:
     def __init__(self,nomeEmpresa,lista_bots):
-        self.__empresa=nomeEmpresa
-        ##verificar se a lista de bots contém apenas bots
-        self.__lista_bots=[lista_bots]
+        self.__empresa = nomeEmpresa
+        self.__lista_bots = []
         self.__bot = None
-    
-    def boas_vindas(self):
-        print('Ola, esse é o sistema de chatbots do Grupo 2\n')
+
+
+    def boas_vindas_sistema(self):
+        print(f'Ola, esse é o sistema de chatbots do Grupo {self.__empresa}\n')
         ##mostra mensagem de boas vindas do sistema
 
     def mostra_menu(self):
-        print('temos 2 bots disponiveis: o brabo e o goodvibes')
-        print('digite:\n 1 - Brabo \n2 - Goodvibes ')
+        print('temos esses bots disponiveis:')
+        for ele in enumerate(self.__lista_bots):
+            print(f'BOT: {ele}')
 
-        ##mostra o menu de escolha de bots
-    
-    def escolhe_bot(self,aux):
-        aux = input()
-        while aux not in ['1', '2']:
-           aux = input('input fora do escopo, digite 0 para o brabo ou 1 para o goodvibes: ')
-       ##faz a entrada de dados do usuário e atribui o objeto ao atributo __bot 
+    def escolhe_bot(self):
+        aux = input('digite o codigo do bot desejado: ')
+        while aux not in enumerate(self.__lista_bots):
+           aux = input('input fora do escopo')
+       ##faz a entrada de dadosf do usuário e atribui o objeto ao atributo __bot 
 
-    def mostra_comandos_bot(self):
-        while True:
-            oper = {
-                1: apresentacao,
-                2: boas_vindas,
-                3: executa_comando,
-                4: despedida
-
-            }   
-            print('1 - apresentacao\n 2 - boas vindas\n 3 - executa comando\n 4 - despedida')
-        
-    def le_envia_comando(self):
-    
     def inicio(self):
         pass
         ##mostra mensagem de boas-vindas do sistema
