@@ -24,7 +24,7 @@ class Bot(ABC):
     def mostra_comandos(self):
         for i in range(0,len(self.__comandos)):
             print()
-            print(--------------------------------)
+            print('--------------------------------')
             print(f'{self.__comandos.items[i][0]}: {self._comandos.items[i][1]}')
 
     @abstractmethod
