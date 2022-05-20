@@ -1,14 +1,12 @@
 ##implemente as seguintes classes
-
 from abc import ABC, abstractmethod
 
 #cmd: comando, desc: descricao
 class Bot(ABC):
-
+    #usar comandos.itens()
     def __init__(self, nome: str, comandos: dict):
         self.__nome = nome
-        self.__cmd = str(comandos.keys())
-        self.__desc = str(comandos.value())
+        self.__comandos = comandos
 
     @property
     def nome(self):
@@ -17,12 +15,17 @@ class Bot(ABC):
     @nome.setter
     def nome(self,nome):
         self.__nome = nome
+    
+    @property
+    def comandos(self):
+        return self.__comandos
+
 
     def mostra_comandos(self):
-        for i in range(0,len(self.__cmd)):
+        for i in range(0,len(self.__comandos)):
             print()
             print(--------------------------------)
-            print(f'{self.__cmd[i]}: {self.__desc[i]}')
+            print(f'{self.__comandos.items[i][0]}: {self._comandos.items[i][1]}')
 
     @abstractmethod
     def executa_comando(self,cmd):
