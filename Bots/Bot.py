@@ -1,9 +1,11 @@
-##implemente as seguintes classes
+# implemente as seguintes classes
 from abc import ABC, abstractmethod
 
-#cmd: comando, desc: descricao
+# cmd: comando, desc: descricao
+
+
 class Bot(ABC):
-    #usar comandos.itens()
+    # usar comandos.itens()
     def __init__(self, nome: str, comandos: dict):
         self.__nome = nome
         self.__comandos = comandos
@@ -13,28 +15,28 @@ class Bot(ABC):
         return self.__nome
 
     @nome.setter
-    def nome(self,nome):
+    def nome(self, nome):
         self.__nome = nome
-    
+
     @property
     def comandos(self):
         return self.__comandos
 
-
     def mostra_comandos(self):
-        for i in range(0,len(self.__comandos)):
+        for i in range(0, len(self.__comandos)):
             print()
             print('--------------------------------')
-            print(f'{self.__comandos.items[i][0]}: {self._comandos.items[i][1]}')
+            print(
+                f'{self.__comandos.items[i][0]}: {self._comandos.items[i][1]}')
 
-    @abstractmethod
-    def executa_comando(self,cmd):
-        pass
+    def executa_comando(self, comando):
+        if comando < len(self.comandos):
+            print(f"{self.bot.nome} -> {self.bot.comando")
 
     @abstractmethod
     def boas_vindas(self):
         pass
-    
+
     @abstractmethod
     def despedida(self):
         pass
